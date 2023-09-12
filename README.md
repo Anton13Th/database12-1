@@ -4,11 +4,12 @@
 
 Сотрудники (  
 - employers_id, первичный ключ, serial  
-- fio, varchar(50)  
+- Lastname, varchar(50)  
+- Firstname, varchar(50)  
+- Midname, varchar(50)  
 - date_start, date  
 - position_id, int, внешний ключ -- Должность (pos_id)  
 - division_id, int, внешний ключ -- Подразделение (div_id)  
-- filial_id, int, внешний ключ -- Филиал (fil_id)  
 - project_id, int, внешний ключ -- Проект (proj_id)  
 
 Должность (  
@@ -25,21 +26,18 @@
 - deptype_id, первичный ключ, serial  
 - deptype_name, varchar(100)  
 
-Филиал (  
-- fil_id, первичный ключ, serial  
-- address_id, int, внешний ключ -- Адреса (address_id)  
-- project_region_id, int, внешний ключ -- Регион (region_id)  
-
 Адреса (  
 - address_id, первичный ключ, serial  
-- address_area, varchar(50)  
-- address_city, varchar(50)  
-- address_street, varchar(50)  
-- address_building, varchar(10)  
+- area_id, внешний ключ -- Регион (region_id)  
+- city_id, внешний ключ -- Города (cities_id)  
 
 Регион (  
 - region_id, первичный ключ, serial  
 - region_name, varchar(100)  
+
+Города (  
+- cities_id, первичный ключ, serial  
+- cities_name, varchar(255)  
 
 Проект (  
 - proj_id, первичный ключ, serial  
